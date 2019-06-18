@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taskInfo version="1.0">
+  <info name="client_id" description="The client id of your Imgur application." />
+  <info name="client_secret" description="The client secret of your Imgur application." />
+  <info name="refresh_token" description="The refresh token of your Imgur application (found from retrieveRefreshToken.html in resources folder)." />
+  <info name="remedy_server"  description="Remedy Server Name or IP Address"></info>
+  <info name="remedy_username" description="Remedy Login Name"></info>
+  <info name="remedy_password" type="encrypted" description="Remedy Password"></info>
+  <info name="remedy_port" description="Remedy TCP Port">0</info>
+  <info name="remedy_prognum" description="Remedy RPC Prognum">0</info>
+  <info name="remedy_authentication" description="Remedy Authentication String"></info>
+  <info name="enable_debug_logging" description="Enable debug logging if the value is set to 'Yes'.">No</info>
+</taskInfo>

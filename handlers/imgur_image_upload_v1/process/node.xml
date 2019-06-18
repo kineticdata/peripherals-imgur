@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="imgur_image_upload" name="Imgur Image Upload" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Uploads an image to imgur.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="title" label="Title" required="false"
+            tooltip="The title of the image."/>
+        <parameter id="description" label="Description" required="false"
+            tooltip="The description of the image."/>
+        <parameter id="album" label="Album" required="false"
+            tooltip="The id of the album you want to add the image to."/>
+        <parameter id="attachment_question_menu_label" required="true" label="Attachment Question Menu Label:"
+            tooltip="The menu label of the attachment question where the photo will be uploaded to." />
+    </parameters>
+    <handler name="imgur_image_upload" version="1">
+        <infos>
+            <info name="refresh_token">&lt;%= @info['refresh_token'] %&gt;</info>
+            <info name="client_id">&lt;%= @info['client_id'] %&gt;</info>
+            <info name="client_secret">&lt;%= @info['client_secret'] %&gt;</info>
+            <info name="remedy_server">&lt;%= @info['remedy_server'] %&gt;</info>
+            <info name="remedy_username">&lt;%= @info['remedy_username'] %&gt;</info>
+            <info name="remedy_password">&lt;%= @info['remedy_password'] %&gt;</info>
+            <info name="remedy_port">&lt;%= @info['remedy_port'] %&gt;</info>
+            <info name="remedy_prognum">&lt;%= @info['remedy_prognum'] %&gt;</info>
+            <info name="remedy_authentication">&lt;%= @info['remedy_authentication'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='attachment_question_menu_label'>&lt;%= @parameters['attachment_question_menu_label'] %&gt;</parameter>
+            <parameter name="title">&lt;%= @parameters['title'] %&gt;</parameter>
+            <parameter name='description'>&lt;%= @parameters['description'] %&gt;</parameter>
+            <parameter name='album'>&lt;%= @parameters['album'] %&gt;</parameter>
+            <parameter name='customer_survey_instance_id'>&lt;%= @base['CustomerSurveyInstanceId'] %&gt;</parameter>
+            <parameter name='survey_template_instance_id'>&lt;%= @base['surveyTemplateInstanceID'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="id"/>
+        <result name="link"/>
+    </results>
+</taskDefinition>

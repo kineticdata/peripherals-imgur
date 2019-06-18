@@ -1,0 +1,38 @@
+== Imgur_Image_Upload_V1
+    This handler uploads an image to Imgur.
+
+=== Parameters
+    [Title]
+        The title of the image.
+    [Description]
+        The description of the image.
+    [Album]
+        The id of the album you want to add the image to.
+    [Attachment Question Menu Label]
+        The menu label of the attachment question where the file will be 
+        uploaded to.
+
+=== Results
+    [Id]
+      The id of the image that was uploaded.
+    [Link]
+      The link to the image that was just uploaded.
+
+==== Sample Configuration
+    Title:                                     Test Picture
+    Description:                               This is a sample picture
+    Album:                                     3TwfU
+    Attachment Question Menu Label:            Upload File
+
+=== Detailed Description
+    This handler uses the REST Imgur API to upload a file to your Imgur account. 
+    Before using any Imgur handler for the first time, you will need to obtain 
+    a refresh token to connect to the account (Instructions for that can
+    be found below). After doing that, the handler will connect to that account
+    and then upload the image. Title, Description, and the Album are all
+    optional attributes.
+
+== How to retrieve the Imgur Refresh Token
+    After downloading this handler, run the helper webpage in the 
+    handler/resources directory and follow the instructions on the page to
+    generate the refresh token.
